@@ -5,8 +5,8 @@ public class CurrencyConverter
 {
 	public static void converter()
 	{
-		JFrame f=new JFrame("CONVERTER");
-		JLabel l1,l2,l3;
+		JFrame f=new JFrame("CONVERTER");    //it creates a new intitially visible frame with title "CONVERTER"
+		JLabel l1,l2,l3;                     //
 		JTextField t1,t2,t3;
 		JButton b1,b2,b3,b4,b5;
 		l1=new JLabel("Rupees: ");
@@ -16,8 +16,8 @@ public class CurrencyConverter
 		l3=new JLabel("Euro: ");
 		l3.setBounds(320,40,100,30);
 		
-		t1=new JTextField("0");
-		t1.setBounds(80,40,50,30);
+		t1=new JTextField("0");      //initialized to width 0
+		t1.setBounds(80,40,50,30);   //
 		t2=new JTextField("0");
 		t2.setBounds(240,40,50,30);
 		t3=new JTextField("0");
@@ -79,7 +79,7 @@ public class CurrencyConverter
 		
 		f.add(l1);
 		f.add(t1);
-		f.add(l2);
+		f.add(l2);     //adding label to frame
 		f.add(t2);
 		f.add(l3);
 		f.add(t3);
