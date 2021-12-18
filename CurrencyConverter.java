@@ -37,9 +37,14 @@ public class CurrencyConverter
 			public void actionPerformed(ActionEvent e)
 			{
 				double d=Double.parseDouble(t1.getText());
-				double d1=(d/75.64);
+				double d1=(d/76.01);
 				String str=String.valueOf(d1);
 				t2.setText(str);
+				
+				double d2=Double.parseDouble(t1.getText());
+				double d3=(d2/85.44);
+				String str1=String.valueOf(d3);
+				t3.setText(str1);
 			}
 		});
 		b2.addActionListener(new ActionListener()
@@ -47,9 +52,14 @@ public class CurrencyConverter
 			public void actionPerformed(ActionEvent e)
 			{
 				double d2=Double.parseDouble(t2.getText());
-				double d3=(d2*75.64);
+				double d3=(d2*76.01);
 				String str1=String.valueOf(d3);
 				t1.setText(str1);
+				
+				double d4=Double.parseDouble(t2.getText());
+				double d5=(d4*0.89);
+				String str=String.valueOf(d5);
+				t3.setText(str);
 			}
 		});
 		b3.addActionListener(new ActionListener()
@@ -63,10 +73,15 @@ public class CurrencyConverter
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				double d=Double.parseDouble(t1.getText());
-				double d1=(d/0.55);
+				double d=Double.parseDouble(t3.getText());
+				double d1=(d*85.44);
 				String str1=String.valueOf(d1);
 				t1.setText(str1);
+				
+				double d2=Double.parseDouble(t3.getText());
+				double d3=(d2*0.89);
+				String str=String.valueOf(d3);
+				t1.setText(str);
 			}
 		});
 		f.addWindowListener(new WindowAdapter()
@@ -89,7 +104,7 @@ public class CurrencyConverter
 		f.add(b4);
 		
 		f.setLayout(null);
-		f.setSize(800,800);
+		f.setSize(600,600);
 		f.setVisible(true);
 	}
 	public static void main(String args[])
