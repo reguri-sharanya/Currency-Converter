@@ -6,40 +6,41 @@ public class CurrencyConverter
 	public static void converter()
 	{
 		JFrame f=new JFrame("CONVERTER");    //it creates a new intitially visible frame with title "CONVERTER"
-		JLabel l1,l2,l3;                     //
-		JTextField t1,t2,t3;
-		JButton b1,b2,b3,b4,b5;
-		l1=new JLabel("Rupees: ");
+		JLabel l1,l2,l3;                     //creating label objects
+		JTextField t1,t2,t3;		     //JTextField allows editing in single line of text
+		JButton b1,b2,b3,b4,b5;		     //JButton creates a button where the properties are taken from action supplied
+		
+		l1=new JLabel("Rupees: ");	     //Naming the label with Rupees
 		l1.setBounds(20,40,100,30);
 		l2=new JLabel("Dollars: ");
-		l2.setBounds(170,40,100,30);
+		l2.setBounds(20,80,100,30);
 		l3=new JLabel("Euro: ");
-		l3.setBounds(320,40,100,30);
+		l3.setBounds(20,120,100,30);
 		
-		t1=new JTextField("0");      //initialized to width 0
-		t1.setBounds(80,40,50,30);   //
+		t1=new JTextField("0");              //initialized to width "0"
+		t1.setBounds(80,40,200,30);
 		t2=new JTextField("0");
-		t2.setBounds(240,40,50,30);
+		t2.setBounds(80,80,200,30);
 		t3=new JTextField("0");
-		t3.setBounds(400,40,50,30); 
+		t3.setBounds(80,120,200,30); 
 		
-		b1=new JButton("INR");
-		b1.setBounds(50,80,60,15);
-		b2=new JButton("Dollar");
-		b2.setBounds(190,80,100,15);
-		b4=new JButton("Euro");
-		b4.setBounds(330,80,100,15);
-		b3=new JButton("close");
-		b3.setBounds(50,150,390,20);
+		b1=new JButton("INR");		     //Button is created with name "INR" and with specified bounds 
+		b1.setBounds(290,40,160,30);
+		b2=new JButton("DOLLAR");	     //Button is created with name "DOLLAR" and with specified bounds
+		b2.setBounds(290,80,160,30);
+		b4=new JButton("EURO");
+		b4.setBounds(290,120,160,30);	     //Button is created with name "EURO" and with specified bounds
+		b3=new JButton("CLOSE");
+		b3.setBounds(20,170,460,20);
 		
 		b1.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				double d=Double.parseDouble(t1.getText());
+				double d=Double.parseDouble(t1.getText());		//getText() returns the visible inner text of particular web element
 				double d1=(d/76.01);
 				String str=String.valueOf(d1);
-				t2.setText(str);
+				t2.setText(str);					//setText() is used to set text on controls
 				
 				double d2=Double.parseDouble(t1.getText());
 				double d3=(d2/85.44);
@@ -47,9 +48,9 @@ public class CurrencyConverter
 				t3.setText(str1);
 			}
 		});
-		b2.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
+		b2.addActionListener(new ActionListener()				//ActionListener() is aa interface that contains actionPerformed() method which is responsible for handling of action events such as
+		{									//when user clicks on a component 
+			public void actionPerformed(ActionEvent e)	
 			{
 				double d2=Double.parseDouble(t2.getText());
 				double d3=(d2*76.01);
@@ -66,9 +67,10 @@ public class CurrencyConverter
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				f.dispose();
+				f.dispose();						//dispose() is a method which causes the JFrame window to be destroyed and cleaned  by the os
 			}
 		});
+		
 		b4.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -92,23 +94,23 @@ public class CurrencyConverter
 			}
 		});
 		
-		f.add(l1);
-		f.add(t1);
-		f.add(l2);     //adding label to frame
-		f.add(t2);
+		f.add(l1);	//adding label l1 to frame 
+		f.add(t1);	//adding textfield t1 to frame
+		f.add(l2);      //adding label l2 to frame
+		f.add(t2);	//adding textfield t2 to frame
 		f.add(l3);
 		f.add(t3);
-		f.add(b1);
+		f.add(b1);	//adding button b1 to frame
 		f.add(b2);
 		f.add(b3);
 		f.add(b4);
 		
 		f.setLayout(null);
-		f.setSize(600,600);
-		f.setVisible(true);
+		f.setSize(600,600);	//setting the window size 600,600 dimensions i.e., square
+		f.setVisible(true);	//if true the text is visible else the text is invisible
 	}
-	public static void main(String args[])
+	public static void main(String args[])		//main method
 	{
-		converter();
+		converter();	
 	}
 }
