@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+
 public class CurrencyConverter
 {
+	
 	public static void converter()
 	{
 		JFrame f=new JFrame("CONVERTER");    //it creates a new intitially visible frame with title "CONVERTER"
@@ -46,9 +48,10 @@ public class CurrencyConverter
 				double d3=(d2/85.44);
 				String str1=String.valueOf(d3);
 				t3.setText(str1);
+				
 			}
 		});
-		b2.addActionListener(new ActionListener()				//ActionListener() is aa interface that contains actionPerformed() method which is responsible for handling of action events such as
+		b2.addActionListener(new ActionListener()				//ActionListener() is a interface that contains actionPerformed() method which is responsible for handling of action events such as
 		{									//when user clicks on a component 
 			public void actionPerformed(ActionEvent e)	
 			{
